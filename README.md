@@ -22,7 +22,7 @@ pip install fastapi uvicorn python-jose[cryptography] passlib
 uvicorn app:app --reload
 ```
 
-The Swagger UI is available at `http://localhost:8000/docs` once the server is running.
+The Swagger UI is available at `http://localhost:2626/docs` once the server is running.
 
 ## Files
 
