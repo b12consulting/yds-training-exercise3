@@ -17,7 +17,7 @@ The goal is not a finished, production-ready implementation. The goal is to **fe
 pip install fastapi uvicorn python-jose[cryptography] passlib
 ```
 
-**Run the app:**
+**Run the app.** This is an optional step, not needed for the scope of this exercise; the focus is on the implementation journey, not the final product.
 ```bash
 uvicorn app:app --reload
 ```
