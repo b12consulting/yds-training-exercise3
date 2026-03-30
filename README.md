@@ -62,10 +62,7 @@ Open [`requirements.md`](requirements.md), read it once, then start implementing
 
 When you are done, leave the code as-is. Do not tidy it up.
 
-**Reflect before moving on:**
-- Does your implementation say anything if the email does not exist?
-- Can the same reset token be used more than once?
-- Does your JWT expire?
+**Reflect before moving on:** what security issues does your implementation handle?
 
 ---
 
