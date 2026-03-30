@@ -62,7 +62,9 @@ Open [`requirements.md`](requirements.md), read it once, then start implementing
 
 When you are done, leave the code as-is. Do not tidy it up.
 
-**Reflect before moving on:** what security issues does your implementation handle?
+**Reflect before moving on:** 
+- what security issues does your implementation handle?
+- before jumping to the implementation, did you take the time to identify potential vulnerabilities?
 
 ---
 
