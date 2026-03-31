@@ -86,6 +86,41 @@ Once the agent has surfaced its findings, use that enriched understanding of the
 
 ---
 
+---
+
+## Round 3 — Using BMad (30 min)
+
+**File:** `app_3.py`
+
+**Workflow:**
+
+1. **Create simplified architecture with Winston** (the architect agent)
+   - Winston analyzes the repo, README, and requirements
+   - Produces a lightweight architecture spec focused on security patterns and API design
+
+2. **Ask Winston to create 3 stories for development**
+   - Outside the formal BMad workflow, but informed by the architecture
+   - Stories focus on: token generation, token validation, and password reset endpoints
+
+3. **Have Bob (Scrum Master) manage the planning**
+   - Bob takes the stories and creates a sprint plan
+   - Ensures all stories are properly sequenced and actionable before dev starts
+   - Use Bob's `[SP] Sprint Planning` capability
+
+4. **Use the `/dev-story-pipeline` skill/workflow** (to be created)
+   - Launches Amelia (dev agent) to implement each story
+   - Launches Rex (review agent) to perform code review after implementation
+   - Runs in sequence: dev → review → dev → review → dev → review
+
+**Goal:** Experience a multi-agent workflow where architecture → stories → implementation → review happens in an orchestrated pipeline, with each specialist agent handling their domain.
+
+**After completing, compare:**
+- How did having architecture-first change the implementation approach?
+- What did the review agent (Rex) catch that you might have missed?
+- Is the orchestrated pipeline worth the setup overhead for security-sensitive features?
+
+---
+
 ## Rules
 
 - Do not modify [`helpers.py`](helpers.py) or [`requirements.md`](requirements.md).
