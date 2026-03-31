@@ -107,7 +107,7 @@ Once the agent has surfaced its findings, use that enriched understanding of the
    - Ensures all stories are properly sequenced and actionable before dev starts
    - Use Bob's `[SP] Sprint Planning` capability
 
-4. **Use the `/dev-story-pipeline` skill/workflow** (to be created)
+4. **Use the `/custom-dev-story-pipeline` skill/workflow** (to be created)
    - Launches Amelia (dev agent) to implement each story
    - Launches Rex (review agent) to perform code review after implementation
    - Runs in sequence: dev → review → dev → review → dev → review
