@@ -15,6 +15,7 @@ Use helpers.py for the database, email mock, JWT utilities, and logger.
 
 import hashlib
 import uvicorn
+from datetime import datetime, timedelta
 
 from fastapi import FastAPI, HTTPException
 from fastapi.security import HTTPBearer
@@ -79,7 +80,13 @@ def create_reset_token(email: str) -> str:
     Returns:
         A signed JWT string.
     """
-    ...  # TODO implement
+    expiration = datetime.utcnow() + timedelta(minutes=15)
+    payload = {
+        "sub": email,
+        "exp": expiration,
+        "iat": datetime.utcnow()
+    }
+    return jwt.encode(payload, _JWT_SECRET, algorithm=_JWT_ALGORITHM)
 
 
 def decode_reset_token(token: str) -> str:
@@ -95,7 +102,14 @@ def decode_reset_token(token: str) -> str:
     Returns:
         The email address encoded in the token.
     """
-    ...  # TODO implement
+    try:
+        payload = jwt.decode(token, _JWT_SECRET, algorithms=[_JWT_ALGORITHM])
+        email = payload.get("sub")
+        if not email:
+            raise ValueError("Token missing required 'sub' claim")
+        return email
+    except JWTError as e:
+        raise ValueError(f"Invalid or expired token: {str(e)}")
 
 
 
